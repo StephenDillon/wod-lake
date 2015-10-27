@@ -1,0 +1,2 @@
+rootProject.name='wod-lake'
+include ':wod-lake-eureka',':wod-lake-gateway',':wod-lake-ui',':wod-lake-user-data'
