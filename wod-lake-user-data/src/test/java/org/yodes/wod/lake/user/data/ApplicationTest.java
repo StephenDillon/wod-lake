@@ -1,4 +1,4 @@
-package org.yodes.wod.lake.eureka;
+package org.yodes.wod.lake.user.data;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -8,6 +8,7 @@ import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.yodes.wod.lake.user.data.repository.UserRestRepository;
 
 import junit.framework.TestCase;
 
@@ -19,6 +20,9 @@ public class ApplicationTest {
 	@Autowired
 	private DiscoveryClient discoveryClient;
 
+	@Autowired
+	private UserRestRepository userRestRepository;
+
 	/**
 	 * Test the application loads and registers with eureka
 	 */
@@ -26,6 +30,14 @@ public class ApplicationTest {
 	public void contextLoads() {
 		ServiceInstance serviceInstance = discoveryClient.getLocalServiceInstance();
 		TestCase.assertNotNull(serviceInstance.getPort());
+	}
+
+	/**
+	 * Test the application loads and registers with eureka
+	 */
+	@Test
+	public void testUserRestRepository() {
+		TestCase.assertNotNull(userRestRepository);
 	}
 
 }
