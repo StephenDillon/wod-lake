@@ -1,12 +1,9 @@
 buildscript {
-    ext {
-        springBootVersion = '1.2.7.RELEASE'
-    }
     repositories {
         mavenCentral()
     }
     dependencies {
-        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:1.3.3.RELEASE") 
         classpath("io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE")
     }
 }
@@ -39,6 +36,7 @@ dependencies {
     compile("org.springframework.boot:spring-boot-starter-actuator")
 	compile("org.springframework.cloud:spring-cloud-starter-zuul")
     compile("org.springframework.cloud:spring-cloud-starter-eureka")
+	compile("org.springframework.boot:spring-boot-devtools")
     compile("com.netflix.eureka:eureka-client")
     testCompile("org.springframework.boot:spring-boot-starter-test") 
     
@@ -46,7 +44,7 @@ dependencies {
 
 dependencyManagement {
 	imports { 
-		mavenBom "org.springframework.cloud:spring-cloud-starter-parent:Angel.SR3" 
+		mavenBom "org.springframework.cloud:spring-cloud-starter-parent:Brixton.M3" 
 	}
 }
 
