@@ -1,0 +1,5 @@
+---
+applications:
+- name: wod-lake-eureka
+  memory: 1024M
+  buildpack: java_buildpack_offline

@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: wod-lake-eureka
+    
+server:
+  port: 9090
+
+security:
+  user:
+    password: eureka
+
+eureka:
+  client:
+    registerWithEureka: false
+    fetchRegistry: false
+    serviceUrl: 
+      defaultZone: http://${vcap.application.uris[0]:127.0.0.1:9090}/eureka/
+  server:
+    waitTimeInMsWhenSyncEmpty: 0
+    
